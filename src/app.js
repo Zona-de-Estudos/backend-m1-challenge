@@ -10,11 +10,7 @@ app.use(cors());
 const repositories = [];
 
 app.get("/repositories", (request, response) => {
-  const {title} = req.query;
-
-  const results = title ? projects.filter(project => project.title.includes(title)) : projects;
-
-  return res.json(results);
+  return response.json(repositories);
 });
 
 app.post("/repositories", (request, response) => {
